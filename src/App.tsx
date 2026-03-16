@@ -186,11 +186,13 @@ export default function App() {
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 {/* Photo (40%) */}
                 <FadeIn className="w-full md:w-[40%]">
-                  <img 
-                    src="/photo.jpg" 
-                    alt="Руслан Бельтюгов" 
-                    className="w-full h-[420px] object-cover object-top rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
-                  />
+                  <div style={{ height: '420px', borderRadius: '16px', overflow: 'hidden' }}>
+                    <img
+                      src="/photo.jpg"
+                      alt="Руслан Бельтюгов"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                    />
+                  </div>
                 </FadeIn>
 
                 {/* Text (60%) */}
