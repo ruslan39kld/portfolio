@@ -153,8 +153,9 @@ export default function App() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-lg text-text-secondary max-w-2xl leading-relaxed mb-12">
-                  Создаю AI-продукты от идеи до продакшена.<br/>
-                  Без команды разработчиков. За дни — не месяцы.
+                  Строю AI-системы корпоративного уровня — от архитектуры до продакшена.<br/>
+                  18 лет операционного опыта в производстве, госсекторе и строительстве<br/>
+                  плюс современный AI-стек. Понимаю бизнес изнутри. Автоматизирую его с помощью AI.
                 </p>
               </FadeIn>
 
@@ -186,7 +187,7 @@ export default function App() {
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 {/* Photo (40%) */}
                 <FadeIn className="w-full md:w-[40%]">
-                  <div style={{ height: '500px', borderRadius: '16px', overflow: 'hidden' }}>
+                  <div style={{ height: '700px', borderRadius: '16px', overflow: 'hidden' }}>
                     <img
                       src="/photo.jpg"
                       alt="Руслан Бельтюгов"
@@ -199,22 +200,87 @@ export default function App() {
                 <FadeIn delay={0.1} className="w-full md:w-[60%] flex flex-col justify-center">
                   <SectionHeading>КТО Я</SectionHeading>
                   <div className="text-text-secondary leading-relaxed space-y-4">
-                    <p>Я работаю на пересечении двух методологий:</p>
                     <p>
-                      <strong className="text-text-main">VIBE CODING</strong> — стратегическое создание IT-продукта совместно с AI. 
-                      Не просто "попросить написать код" — а продумать архитектуру, 
-                      структуру данных, логику взаимодействия. Результат: сложные системы 
-                      за дни вместо недель при качестве 95%.
+                      Я работаю на пересечении двух миров, которые редко встречаются в одном человеке.
                     </p>
                     <p>
-                      <strong className="text-text-main">FRONTIER DEPLOYMENT ENGINEER</strong> — довожу созданный продукт до реального 
-                      продакшена. Настраиваю инфраструктуру, деплой, интеграции, мониторинг.
+                      <strong className="text-text-main">Первый мир — реальный бизнес.</strong> Судостроительный завод, оборонное предприятие, производство металлоконструкций, крупное строительство, государственный сектор. 18 лет я выстраивал процессы, внедрял планирование, убирал хаос в операционной деятельности — в отраслях, где нет права на ошибку. Я знаю как думает руководитель завода, что болит у менеджера стройки, где теряются деньги на производстве.
                     </p>
                     <p>
-                      Объединяю 18 лет управления проектами с современными AI-инструментами.
+                      <strong className="text-text-main">Второй мир — AI-инжиниринг нового поколения.</strong> Методология Vibe Coding позволяет проектировать и строить сложные IT-продукты совместно с искусственным интеллектом — не прототипы, не демо, а работающие системы с точностью 90–95%. Frontier Deployment — это финальный шаг, который большинство пропускает: довести систему до реального продакшена, настроить инфраструктуру, задеплоить, обеспечить работу с живыми пользователями.
+                    </p>
+                    <p>
+                      Эта комбинация встречается редко. Обычно либо бизнес-аналитик без технических компетенций, либо разработчик без понимания отрасли. Я закрываю весь путь — от постановки задачи до работающего продукта в продакшене.
                     </p>
                   </div>
                 </FadeIn>
+              </div>
+            </section>
+
+            {/* Stack */}
+            <section className="py-10">
+              <SectionHeading>СТЕК</SectionHeading>
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {[
+                  {
+                    icon: "🤖",
+                    title: "AI и машинное обучение",
+                    items: ["Claude API", "GigaChat API", "RAG-архитектура", "FAISS", "BM25", "NLP", "LLM", "Computer Vision", "YOLO"]
+                  },
+                  {
+                    icon: "⚙️",
+                    title: "Разработка и деплой",
+                    items: ["Python", "FastAPI", "React", "TypeScript", "Telegram Bot API", "Amvera", "REST API", "Yandex API"]
+                  },
+                  {
+                    icon: "📊",
+                    title: "Аналитика и данные",
+                    items: ["Power BI", "Power Query", "MS Project", "Primavera P6", "Excel", "управленческий учёт", "KPI-системы"]
+                  },
+                  {
+                    icon: "💡",
+                    title: "Методологии",
+                    items: ["Vibe Coding", "Frontier Deployment", "RAG-пайплайн", "Prompt Engineering", "PMI", "бизнес-анализ", "проектное управление"]
+                  },
+                  {
+                    icon: "🏭",
+                    title: "Отраслевая экспертиза",
+                    items: ["Производство", "судостроение", "оборонный госзаказ", "строительство", "государственный сектор", "телеком"]
+                  }
+                ].map((category, i) => (
+                  <FadeIn key={i} delay={i * 0.1}>
+                    <div className="bg-bg-card border border-border-accent rounded-xl p-6 glow-box-hover h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="text-2xl">{category.icon}</span>
+                        <h3 className="font-orbitron font-semibold text-text-main text-sm">{category.title}</h3>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {category.items.map((item, j) => (
+                          <span key={j} className="tech-badge">{item}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </section>
+
+            {/* Why It Matters */}
+            <section className="py-10">
+              <SectionHeading>ПОЧЕМУ ЭТО ВАЖНО</SectionHeading>
+              <div className="bg-bg-card border border-accent-primary/30 rounded-xl p-8 glow-box space-y-6">
+                <p className="text-text-secondary leading-relaxed">
+                  Большинство AI-инструментов создаются людьми, которые хорошо знают технологии, но слабо понимают как работает реальное предприятие. В результате — красивые демо, которые не приживаются в бизнесе.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  Я прошёл обратный путь. Сначала 18 лет в реальных отраслях — производство, оборонка, стройка, госсектор. Потом — AI-стек и методология, которая позволяет строить системы корпоративного уровня без команды разработчиков.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  Я понимаю что болит у руководителя, где теряется эффективность, какие данные реально нужны для принятия решений — и могу сразу автоматизировать это через AI. Без длинной цепочки объяснений между бизнесом и разработчиком. Без потери смысла на каждом этапе согласований.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  Бизнес не стоит на месте — меняются данные, появляются новые задачи, требования обновляются. Поэтому созданные системы не просто запускаются и забываются. Они развиваются вместе с организацией: дорабатываются под новые условия, расширяются под новые процессы, адаптируются под изменившиеся требования. Это не разовая автоматизация — это живой инструмент, который подстраивается под бизнес на каждом этапе его развития.
+                </p>
               </div>
             </section>
 
