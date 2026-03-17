@@ -186,7 +186,7 @@ export default function App() {
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 {/* Photo (40%) */}
                 <FadeIn className="w-full md:w-[40%]">
-                  <div style={{ height: '500px', borderRadius: '16px', overflow: 'hidden' }}>
+                  <div style={{ height: '700px', borderRadius: '16px', overflow: 'hidden' }}>
                     <img
                       src="/photo.jpg"
                       alt="Руслан Бельтюгов"
