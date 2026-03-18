@@ -142,42 +142,21 @@ export default function App() {
             {/* Hero Section */}
             <section className="min-h-[80vh] flex flex-col justify-center pt-20 pb-0">
               <FadeIn>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider mb-4 glow-text uppercase">
-                  Бельтюгов Руслан
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider mb-2 uppercase">
+                  <span className="text-text-main glow-text">FRONTIER DEPLOYMENT ENGINEER</span>
                 </h1>
-              </FadeIn>
-              <FadeIn delay={0.1}>
-                <div className="text-xl md:text-2xl text-accent-primary font-medium mb-6 h-8">
-                  <Typewriter text="Vibe Coding + Frontier Deployment Engineer" delay={500} />
-                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-6 uppercase text-accent-primary">
+                  №1 ИНСТРУМЕНТ ЦИФРОВОЙ ТРАНСФОРМАЦИИ
+                </h2>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-lg text-text-secondary max-w-2xl leading-relaxed mb-12">
-                  Строю AI-системы корпоративного уровня — от архитектуры до продакшена.<br/>
-                  18 лет операционного опыта в производстве, госсекторе и строительстве<br/>
-                  плюс современный AI-стек. Понимаю бизнес изнутри. Автоматизирую его с помощью AI.
+                  Методология, которая позволяет строить AI-системы корпоративного уровня<br/>
+                  без команды разработчиков — от архитектуры до продакшена.<br/>
+                  18 лет операционного опыта в реальных отраслях плюс современный AI-стек.<br/>
+                  Результат: сложные системы за дни вместо месяцев при качестве 95%.
                 </p>
               </FadeIn>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                {[
-                  { icon: "⚙️", value: 18, suffix: "+", label: "лет опыта" },
-                  { icon: "🚀", value: 5, suffix: "", label: "AI MVP в продакшене" },
-                  { icon: "📜", value: 19, suffix: "", label: "сертификатов" },
-                  { icon: "🎯", value: 95, suffix: "%", label: "точность AI-систем" },
-                ].map((stat, i) => (
-                  <FadeIn key={i} delay={0.3 + i * 0.1}>
-                    <div className="bg-bg-card border-t-2 border-accent-primary rounded-xl p-6 glow-box-hover text-center h-full">
-                      <div className="text-3xl mb-2">{stat.icon}</div>
-                      <div className="text-3xl font-orbitron font-bold text-text-main mb-1">
-                        <Counter end={stat.value} suffix={stat.suffix} />
-                      </div>
-                      <div className="text-sm text-text-secondary">{stat.label}</div>
-                    </div>
-                  </FadeIn>
-                ))}
-              </div>
             </section>
 
             <div className="section-divider" style={{ margin: '20px 0' }}></div>
@@ -212,15 +191,46 @@ export default function App() {
                     <p>
                       Эта комбинация встречается редко. Обычно либо бизнес-аналитик без технических компетенций, либо разработчик без понимания отрасли. Я закрываю весь путь — от постановки задачи до работающего продукта в продакшене.
                     </p>
+                    <p>
+                      За 18 лет я работал в судостроении, телекоме, промышленном производстве, оборонной отрасли, строительстве и государственном секторе. Каждая сфера — своя специфика, свои процессы, свои требования. Главный вывод: в любой новой отрасли можно разобраться и выстроить эффективную систему, если следовать чёткому структурированному плану. Именно так я подхожу к каждому новому проекту — будь то агрохолдинг, медицина, логистика или любая другая сфера.
+                    </p>
                   </div>
                 </FadeIn>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
+                {[
+                  { icon: "⚙️", value: 18, suffix: "+", label: "лет опыта" },
+                  { icon: "🚀", value: 5, suffix: "", label: "AI MVP в продакшене" },
+                  { icon: "📜", value: 19, suffix: "", label: "сертификатов" },
+                  { icon: "🎯", value: 95, suffix: "%", label: "точность AI-систем" },
+                ].map((stat, i) => (
+                  <FadeIn key={i} delay={0.1 + i * 0.1}>
+                    <div className="bg-bg-card border-t-2 border-accent-primary rounded-xl p-6 glow-box-hover text-center h-full">
+                      <div className="text-3xl mb-2">{stat.icon}</div>
+                      <div className="text-3xl font-orbitron font-bold text-text-main mb-1">
+                        <Counter end={stat.value} suffix={stat.suffix} />
+                      </div>
+                      <div className="text-sm text-text-secondary">{stat.label}</div>
+                    </div>
+                  </FadeIn>
+                ))}
               </div>
             </section>
 
             {/* Stack */}
             <section className="py-10">
               <SectionHeading>СТЕК</SectionHeading>
-              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="flex gap-8 items-start">
+                <div className="hidden md:block shrink-0" style={{ width: '280px' }}>
+                  <img
+                    src="/stack.jpg"
+                    alt="Stack"
+                    style={{ width: '280px', borderRadius: '12px', objectFit: 'cover' }}
+                  />
+                </div>
+              <div className="flex-1 grid md:grid-cols-2 gap-6">
                 {[
                   {
                     icon: "🤖",
@@ -256,12 +266,13 @@ export default function App() {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {category.items.map((item, j) => (
-                          <span key={j} className="tech-badge">{item}</span>
+                          <span key={j} style={{ background: '#F1F5F9', color: '#334155', border: '1px solid #CBD5E1', fontSize: '12px', borderRadius: '6px', padding: '4px 10px' }}>{item}</span>
                         ))}
                       </div>
                     </div>
                   </FadeIn>
                 ))}
+              </div>
               </div>
             </section>
 
