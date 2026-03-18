@@ -143,15 +143,15 @@ export default function App() {
             <section className="min-h-[80vh] flex flex-col justify-center pt-20 pb-0">
               <FadeIn>
                 <h1 className="font-bold tracking-wider mb-2 uppercase">
-                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider uppercase text-text-main mb-1">VIBE CODING +</span>
-                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider uppercase text-text-main glow-text">FRONTIER DEPLOYMENT ENGINEER</span>
+                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider uppercase text-text-main">VIBE CODING +</span>
+                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider uppercase text-text-main">FRONTIER DEPLOYMENT ENGINEER</span>
                 </h1>
                 <h2 className="font-bold tracking-wider mb-6 uppercase text-accent-primary" style={{ fontSize: 'clamp(1.1rem, 2.5vw, 2.5rem)', whiteSpace: 'nowrap' }}>
                   №1 ИНСТРУМЕНТ ЦИФРОВОЙ ТРАНСФОРМАЦИИ
                 </h2>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="text-lg text-text-secondary max-w-none leading-relaxed mb-12">
+                <p className="text-lg text-text-secondary w-full text-left leading-relaxed mb-12">
                   Методология, которая позволяет строить AI-системы корпоративного уровня без команды разработчиков — от архитектуры до продакшена. Результат: сложные системы за дни вместо месяцев при качестве 95%.
                 </p>
               </FadeIn>
@@ -220,11 +220,11 @@ export default function App() {
             {/* Stack */}
             <section className="py-10">
               <SectionHeading>СТЕК</SectionHeading>
-              <div className="flex gap-8 items-start">
+              <div className="flex flex-row items-start gap-8">
                 {/* Cards */}
                 <div className="flex-1">
                   {/* Rows 1-2 — 2x2 grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     {[
                       {
                         icon: "🤖",
@@ -263,7 +263,7 @@ export default function App() {
                     ))}
                   </div>
                   {/* Row 3 — 5th card centered */}
-                  <FadeIn delay={0.4} className="w-full md:w-[calc(50%-12px)] mx-auto">
+                  <FadeIn delay={0.4} className="mx-auto w-full md:max-w-[calc(50%-8px)]">
                     <div className="bg-bg-card border border-border-accent rounded-xl p-6 glow-box-hover h-full">
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-2xl">🏭</span>
@@ -278,21 +278,18 @@ export default function App() {
                   </FadeIn>
                 </div>
                 {/* Image right */}
-                <div className="hidden md:block shrink-0" style={{ alignSelf: 'center' }}>
-                  <img
-                    src="/stack.jpg"
-                    alt="Stack"
-                    style={{ display: 'block', width: '260px', borderRadius: '12px', alignSelf: 'center' }}
-                    onError={(e) => {
-                      const el = e.currentTarget;
-                      el.style.display = 'none';
-                      const placeholder = document.createElement('div');
-                      placeholder.style.cssText = 'width:260px;height:200px;border:2px dashed #FF6B00;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#FF6B00;font-size:12px;opacity:0.5';
-                      placeholder.textContent = 'stack.jpg not found';
-                      el.parentElement?.appendChild(placeholder);
-                    }}
-                  />
-                </div>
+                <img
+                  className="hidden md:block shrink-0"
+                  src="/stack.jpg"
+                  alt="Stack"
+                  style={{ width: '260px', borderRadius: '12px', display: 'block', alignSelf: 'center' }}
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    if (t.src.endsWith('.jpg')) t.src = '/stack.JPG';
+                    else if (t.src.endsWith('.JPG')) t.src = '/stack.png';
+                    else if (t.src.endsWith('.png')) t.src = '/stack.PNG';
+                  }}
+                />
               </div>
             </section>
 
