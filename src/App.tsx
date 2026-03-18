@@ -142,8 +142,9 @@ export default function App() {
             {/* Hero Section */}
             <section className="min-h-[80vh] flex flex-col justify-center pt-20 pb-0">
               <FadeIn>
-                <h1 className="font-bold tracking-wider mb-2 uppercase" style={{ fontSize: 'clamp(1.4rem, 3vw, 3rem)', whiteSpace: 'nowrap' }}>
-                  <span className="text-text-main glow-text">VIBE CODING + FRONTIER DEPLOYMENT ENGINEER</span>
+                <h1 className="font-bold tracking-wider mb-2 uppercase" style={{ whiteSpace: 'nowrap' }}>
+                  <span className="block text-xl md:text-2xl font-bold tracking-wider uppercase text-text-main mb-1">VIBE CODING +</span>
+                  <span className="text-text-main glow-text" style={{ fontSize: 'clamp(1.4rem, 3vw, 3rem)' }}>FRONTIER DEPLOYMENT ENGINEER</span>
                 </h1>
                 <h2 className="font-bold tracking-wider mb-6 uppercase text-accent-primary" style={{ fontSize: 'clamp(1.1rem, 2.5vw, 2.5rem)', whiteSpace: 'nowrap' }}>
                   №1 ИНСТРУМЕНТ ЦИФРОВОЙ ТРАНСФОРМАЦИИ
@@ -151,9 +152,7 @@ export default function App() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-lg text-text-secondary max-w-2xl leading-relaxed mb-12">
-                  Методология, которая позволяет строить AI-системы корпоративного уровня без команды разработчиков — от архитектуры до продакшена.
-                  <br/><br/>
-                  Результат: сложные системы за дни вместо месяцев при качестве 95%.
+                  Методология, которая позволяет строить AI-системы корпоративного уровня без команды разработчиков — от архитектуры до продакшена. Результат: сложные системы за дни вместо месяцев при качестве 95%.
                 </p>
               </FadeIn>
             </section>
@@ -224,8 +223,8 @@ export default function App() {
               <div className="flex gap-8 items-start">
                 {/* Cards */}
                 <div className="flex-1">
-                  {/* Row 1 — 3 cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                  {/* Rows 1-2 — 2x2 grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     {[
                       {
                         icon: "🤖",
@@ -241,6 +240,11 @@ export default function App() {
                         icon: "📊",
                         title: "Аналитика и данные",
                         items: ["Power BI", "Power Query", "MS Project", "Primavera P6", "Excel", "управленческий учёт", "KPI-системы"]
+                      },
+                      {
+                        icon: "💡",
+                        title: "Методологии",
+                        items: ["Vibe Coding", "Frontier Deployment", "RAG-пайплайн", "Prompt Engineering", "PMI", "бизнес-анализ", "проектное управление"]
                       },
                     ].map((category, i) => (
                       <FadeIn key={i} delay={i * 0.1}>
@@ -258,35 +262,20 @@ export default function App() {
                       </FadeIn>
                     ))}
                   </div>
-                  {/* Row 2 — 2 cards centered */}
-                  <div className="flex flex-col md:flex-row gap-6 md:justify-center">
-                    {[
-                      {
-                        icon: "💡",
-                        title: "Методологии",
-                        items: ["Vibe Coding", "Frontier Deployment", "RAG-пайплайн", "Prompt Engineering", "PMI", "бизнес-анализ", "проектное управление"]
-                      },
-                      {
-                        icon: "🏭",
-                        title: "Отраслевая экспертиза",
-                        items: ["Производство", "судостроение", "оборонный госзаказ", "строительство", "государственный сектор", "телеком"]
-                      }
-                    ].map((category, i) => (
-                      <FadeIn key={i} delay={(i + 3) * 0.1} className="w-full md:w-[calc(33.333%-12px)]">
-                        <div className="bg-bg-card border border-border-accent rounded-xl p-6 glow-box-hover h-full">
-                          <div className="flex items-center gap-3 mb-4">
-                            <span className="text-2xl">{category.icon}</span>
-                            <h3 className="font-orbitron font-semibold text-text-main text-sm">{category.title}</h3>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {category.items.map((item, j) => (
-                              <span key={j} style={{ background: '#F1F5F9', color: '#334155', border: '1px solid #CBD5E1', fontSize: '12px', borderRadius: '6px', padding: '4px 10px' }}>{item}</span>
-                            ))}
-                          </div>
-                        </div>
-                      </FadeIn>
-                    ))}
-                  </div>
+                  {/* Row 3 — 5th card centered */}
+                  <FadeIn delay={0.4} className="w-full md:w-[calc(50%-12px)] mx-auto">
+                    <div className="bg-bg-card border border-border-accent rounded-xl p-6 glow-box-hover h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="text-2xl">🏭</span>
+                        <h3 className="font-orbitron font-semibold text-text-main text-sm">Отраслевая экспертиза</h3>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {["Производство", "судостроение", "оборонный госзаказ", "строительство", "государственный сектор", "телеком"].map((item, j) => (
+                          <span key={j} style={{ background: '#F1F5F9', color: '#334155', border: '1px solid #CBD5E1', fontSize: '12px', borderRadius: '6px', padding: '4px 10px' }}>{item}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </FadeIn>
                 </div>
                 {/* Image right */}
                 <div className="hidden md:block shrink-0" style={{ alignSelf: 'flex-start' }}>
