@@ -142,16 +142,16 @@ export default function App() {
             {/* Hero Section */}
             <section className="min-h-[80vh] flex flex-col justify-center pt-20 pb-0">
               <FadeIn>
-                <h1 className="font-bold tracking-wider mb-2 uppercase" style={{ whiteSpace: 'nowrap' }}>
-                  <span className="block text-xl md:text-2xl font-bold tracking-wider uppercase text-text-main mb-1">VIBE CODING +</span>
-                  <span className="text-text-main glow-text" style={{ fontSize: 'clamp(1.4rem, 3vw, 3rem)' }}>FRONTIER DEPLOYMENT ENGINEER</span>
+                <h1 className="font-bold tracking-wider mb-2 uppercase">
+                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider uppercase text-text-main mb-1">VIBE CODING +</span>
+                  <span className="block text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider uppercase text-text-main glow-text">FRONTIER DEPLOYMENT ENGINEER</span>
                 </h1>
                 <h2 className="font-bold tracking-wider mb-6 uppercase text-accent-primary" style={{ fontSize: 'clamp(1.1rem, 2.5vw, 2.5rem)', whiteSpace: 'nowrap' }}>
                   №1 ИНСТРУМЕНТ ЦИФРОВОЙ ТРАНСФОРМАЦИИ
                 </h2>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <p className="text-lg text-text-secondary max-w-2xl leading-relaxed mb-12">
+                <p className="text-lg text-text-secondary max-w-none leading-relaxed mb-12">
                   Методология, которая позволяет строить AI-системы корпоративного уровня без команды разработчиков — от архитектуры до продакшена. Результат: сложные системы за дни вместо месяцев при качестве 95%.
                 </p>
               </FadeIn>
@@ -278,11 +278,19 @@ export default function App() {
                   </FadeIn>
                 </div>
                 {/* Image right */}
-                <div className="hidden md:block shrink-0" style={{ alignSelf: 'flex-start' }}>
+                <div className="hidden md:block shrink-0" style={{ alignSelf: 'center' }}>
                   <img
                     src="/stack.jpg"
                     alt="Stack"
-                    style={{ width: '260px', borderRadius: '12px', objectFit: 'cover' }}
+                    style={{ display: 'block', width: '260px', borderRadius: '12px', alignSelf: 'center' }}
+                    onError={(e) => {
+                      const el = e.currentTarget;
+                      el.style.display = 'none';
+                      const placeholder = document.createElement('div');
+                      placeholder.style.cssText = 'width:260px;height:200px;border:2px dashed #FF6B00;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#FF6B00;font-size:12px;opacity:0.5';
+                      placeholder.textContent = 'stack.jpg not found';
+                      el.parentElement?.appendChild(placeholder);
+                    }}
                   />
                 </div>
               </div>
